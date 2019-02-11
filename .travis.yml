@@ -5,7 +5,10 @@ otp_release:
   - 20.0
 sudo: false
 script:
-  - mix test && MIX_ENV=test mix coveralls.travis
+  - mix test 
+  - mix coveralls.travis
 after_script:
   - mix deps.get --only docs
   - MIX_ENV=docs mix inch.report
+env:
+  - MIX_ENV=test
