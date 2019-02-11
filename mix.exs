@@ -33,7 +33,7 @@ defmodule Comeonin.Mixfile do
       {:bcrypt_elixir, "~> 0.12.1 or ~> 1.0", optional: true},
       {:pbkdf2_elixir, "~> 0.12", optional: true},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:excoveralls, github: "parroty/excoveralls"}
+      {:excoveralls, "~> 0.4", only: :test}
     ]
   end
 
