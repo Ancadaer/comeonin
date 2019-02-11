@@ -43,4 +43,10 @@ defmodule Comeonin.Mixfile do
       links: %{"GitHub" => "https://github.com/riverrun/comeonin"}
     ]
   end
+
+  defp deps do
+    [
+      {:excoveralls, github: "parroty/excoveralls"}
+    ]
+  end
 end
