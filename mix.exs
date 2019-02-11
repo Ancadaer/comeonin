@@ -32,7 +32,8 @@ defmodule Comeonin.Mixfile do
       {:argon2_elixir, "~> 1.2", optional: true},
       {:bcrypt_elixir, "~> 0.12.1 or ~> 1.0", optional: true},
       {:pbkdf2_elixir, "~> 0.12", optional: true},
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:excoveralls, github: "parroty/excoveralls"}
     ]
   end
 
@@ -44,9 +45,4 @@ defmodule Comeonin.Mixfile do
     ]
   end
 
-  defp deps do
-    [
-      {:excoveralls, github: "parroty/excoveralls"}
-    ]
-  end
 end
