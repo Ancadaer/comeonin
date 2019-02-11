@@ -17,6 +17,7 @@ defmodule Comeonin.Mixfile do
       description: @description,
       package: package(),
       source_url: "https://github.com/riverrun/comeonin",
+      test_coverage: [tool: ExCoveralls],
       deps: deps()
     ]
   end
