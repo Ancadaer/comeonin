@@ -1,8 +1,10 @@
 defmodule ComeoninTest do
   use ExUnit.Case
+  use PropCheck
 
   import ExUnit.CaptureIO
   import ComeoninTestHelper
+
 
   @algs [Comeonin.Argon2, Comeonin.Bcrypt, Comeonin.Pbkdf2]
 
@@ -42,7 +44,7 @@ defmodule ComeoninTest do
     add_hash_check("aáåäeéêëoôö", wrong_list)
   end
 
-  test "user obfuscation function always returns false" do
+  test "user obfuscation function always retuExUnit.CaptureIOrns false" do
     for crypto <- @algs do
       assert crypto.dummy_checkpw() == false
     end
@@ -129,4 +131,21 @@ defmodule ComeoninTest do
     assert report =~ "Hash:\t\t$2b$10$"
     assert report =~ "Verification OK"
   end
+
+
+  property "every char list", [:verbose] do
+    wrong_list = ["aged2h$ru", "2dau$ehgr", "rg$deh2au", "2edrah$gu", "$agedhur2", ""]
+    forall s <- utf8() do
+      hash_check(s, wrong_list)
+    end
+    assert "1" == "1"
+  end
+
+
+
+
+
+
+
+
 end
